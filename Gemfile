@@ -5,6 +5,17 @@ gem 'rails', '4.0.3'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'bootstrap-sass', '2.3.2.0'
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
