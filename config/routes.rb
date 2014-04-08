@@ -1,4 +1,6 @@
 LargeProject::Application.routes.draw do
+  resources :artists
+
   resources :movements
   root 'movements#index'
 
