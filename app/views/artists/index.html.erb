@@ -17,7 +17,7 @@
     <% @artists.each do |artist| %>
       <tr>
         <td><%= artist.name %></td>
-        <td><%= artist.movement_id %></td>
+        <td><%= Movement.where(id: artist.movement_id).first.name %></td>
         <td><%= artist.born %></td>
         <td><%= artist.died %></td>
         <td><%= link_to 'Show', artist %></td>

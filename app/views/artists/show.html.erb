@@ -7,7 +7,7 @@
 
 <p>
   <strong>Movement:</strong>
-  <%= @artist.movement_id %>
+  <%= Movement.where(id: @artist.movement_id).first.name %>
 </p>
 
 <p>
