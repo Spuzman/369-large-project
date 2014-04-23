@@ -23,7 +23,7 @@ describe ArtistsController do
   # This should return the minimal set of attributes required to create a valid
   # Artist. As you add validations to Artist, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "Leonardo da Vinci", "born" => "1452-4-15", "died" => "1519-5-2" } }
+  let(:valid_attributes) { { "name" => "Leonardo da Vinci", "movement_id" => "1", "born" => "1452-04-15", "died" => "1519-05-02" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
