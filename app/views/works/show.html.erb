@@ -7,7 +7,12 @@
 
 <p>
   <strong>Artist:</strong>
-  <%= @work.artist_id %>
+  <%= Artist.where(id: @work.artist_id).first.name %>
+</p>
+
+<p>
+  <strong>Movement:</strong>
+  <%= Movement.where(id: Artist.where(id: @work.artist_id).first.id).first.name %>
 </p>
 
 <p>
@@ -22,7 +27,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @work.image_url %>
+  <%= image_tag @work.image_url %>
 </p>
 
 <%= link_to 'Edit', edit_work_path(@work) %> |

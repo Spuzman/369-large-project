@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Artist</th>
+      <th>Movement</th>
       <th>Year completed</th>
       <th>Materials</th>
       <th></th>
@@ -17,7 +18,8 @@
     <% @works.each do |work| %>
       <tr>
         <td><%= work.name %></td>
-        <td><%= work.artist_id %></td>
+        <td><%= Artist.where(id: work.artist_id).first.name %></td>
+        <td><%= Movement.where(id: Artist.where(id: work.artist_id).first.id).first.name %></td>
         <td><%= work.year_completed %></td>
         <td><%= work.materials %></td>
         <td><%= link_to 'Show', work %></td>
