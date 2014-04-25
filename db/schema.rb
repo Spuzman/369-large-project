@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20140425004344) do
   create_table "works", force: true do |t|
     t.string   "name"
     t.integer  "artist_id"
-    t.date     "year_completed"
+    t.integer  "year_completed"
     t.text     "materials"
     t.string   "image_url"
     t.datetime "created_at"

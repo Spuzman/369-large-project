@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :artist_id %><br>
-    <%= f.number_field :artist_id %>
+    <%= f.select :artist_id, Artist.all.collect {|p| [p.name, p.id] } %>
   </div>
   <div class="field">
     <%= f.label :year_completed %><br>
-    <%= f.date_select :year_completed %>
+    <%= f.number_field :year_completed %>
   </div>
   <div class="field">
     <%= f.label :materials %><br>

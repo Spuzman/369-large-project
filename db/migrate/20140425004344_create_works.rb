@@ -3,7 +3,7 @@ class CreateWorks < ActiveRecord::Migration
     create_table :works do |t|
       t.string :name
       t.integer :artist_id
-      t.date :year_completed
+      t.integer :year_completed
       t.text :materials
       t.string :image_url
 

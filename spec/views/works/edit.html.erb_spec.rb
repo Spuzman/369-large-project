@@ -16,7 +16,7 @@ describe "works/edit" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", work_path(@work), "post" do
       assert_select "input#work_name[name=?]", "work[name]"
-      assert_select "input#work_artist_id[name=?]", "work[artist_id]"
+      assert_select "select#work_artist_id[name=?]", "work[artist_id]"
       assert_select "textarea#work_materials[name=?]", "work[materials]"
       assert_select "input#work_image_url[name=?]", "work[image_url]"
     end

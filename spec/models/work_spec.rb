@@ -11,5 +11,4 @@ describe Work do
   it { should validate_presence_of :materials }
 
   it { should respond_to :image_url }
-  it { should validate_presence_of :iimage_url }
 end
