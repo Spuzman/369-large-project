@@ -10,5 +10,5 @@ describe Artist do
   it { should respond_to :died }
   it { should validate_presence_of :died }
 
-  # it { should have_many :works }
+  it { should have_many :works }
 end
