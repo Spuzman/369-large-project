@@ -1,4 +1,6 @@
 LargeProject::Application.routes.draw do
+  resources :works
+
   get "static_pages/home"
   resources :artists
 
