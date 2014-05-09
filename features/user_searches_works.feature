@@ -7,7 +7,8 @@ Feature: User searches for Works
       And work "Test Work" exists with artist name "Example Artist" and year completed "1920" and materials "oil paints" and image "http://uploads5.wikipaintings.org/images/claude-monet/madame-monet-and-child.jpg"
       And I am on the work page
     When I press "Search"
-    Then I should see "Search cannot be blank"
+    Then I should see "Test Work"
+      And I should see "Example Work"
 
   Scenario: User searches for "Test"
     Given movement "Example Movement" exists with description "This is an example description."
@@ -15,7 +16,7 @@ Feature: User searches for Works
       And work "Example Work" exists with artist name "Example Artist" and year completed "1900" and materials "oil paints" and image "http://www.tate.org.uk/art/images/work/T/T05/T05010_10.jpg"
       And work "Test Work" exists with artist name "Example Artist" and year completed "1920" and materials "oil paints" and image "http://uploads5.wikipaintings.org/images/claude-monet/madame-monet-and-child.jpg"
       And I am on the work page
-    When I fill in "Search" with "Test"
+    When I fill in "search" with "Test"
       And I press "Search"
     Then I should see "Test Work"
       And I should not see "Example Work"
@@ -26,7 +27,7 @@ Feature: User searches for Works
       And work "Example Work" exists with artist name "Example Artist" and year completed "1900" and materials "oil paints" and image "http://www.tate.org.uk/art/images/work/T/T05/T05010_10.jpg"
       And work "Test Work" exists with artist name "Example Artist" and year completed "1920" and materials "oil paints" and image "http://uploads5.wikipaintings.org/images/claude-monet/madame-monet-and-child.jpg"
       And I am on the work page
-    When I fill in "Search" with "oil paints"
+    When I fill in "search" with "oil paints"
       And I press "Search"
     Then I should see "Test Work"
       And I should see "Example Work"
@@ -37,7 +38,7 @@ Feature: User searches for Works
       And work "Example Work" exists with artist name "Example Artist" and year completed "1900" and materials "oil paints" and image "http://www.tate.org.uk/art/images/work/T/T05/T05010_10.jpg"
       And work "Test Work" exists with artist name "Example Artist" and year completed "1920" and materials "oil paints" and image "http://uploads5.wikipaintings.org/images/claude-monet/madame-monet-and-child.jpg"
       And I am on the work page
-    When I fill in "Search" with "1920"
+    When I fill in "search" with "1920"
       And I press "Search"
     Then I should see "Test Work"
       And I should not see "Example Work"
@@ -48,6 +49,6 @@ Feature: User searches for Works
       And work "Example Work" exists with artist name "Example Artist" and year completed "1900" and materials "oil paints" and image "http://www.tate.org.uk/art/images/work/T/T05/T05010_10.jpg"
       And work "Test Work" exists with artist name "Example Artist" and year completed "1920" and materials "oil paints" and image "http://uploads5.wikipaintings.org/images/claude-monet/madame-monet-and-child.jpg"
       And I am on the work page
-    When I fill in "Search" with "monet"
+    When I fill in "search" with "monet"
       And I press "Search"
     Then I should not see "Test Work"
