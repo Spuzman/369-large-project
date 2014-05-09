@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @work.name %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <% artist = Artist.where(id: @work.artist_id).first %>
+  <%= link_to artist.name, artist %>
+</p>
+
+<p>
+  <strong>Movement:</strong>
+  <% movement = Movement.where(id: Artist.where(id: @work.artist_id).first.id).first %>
+  <%= link_to movement.name, movement %>
+</p>
+
+<p>
+  <strong>Year completed:</strong>
+  <%= @work.year_completed %>
+</p>
+
+<p>
+  <strong>Materials:</strong>
+  <%= @work.materials %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @work.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_work_path(@work) %> |
+<%= link_to 'Back', works_path %>

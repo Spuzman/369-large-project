@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Movement:</strong>
+  <% movement = Movement.where(id: @artist.movement_id).first %>
+  <%= link_to movement.name, movement %>
+</p>
+
+<p>
+  <strong>Born:</strong>
+  <%= @artist.born %>
+</p>
+
+<p>
+  <strong>Died:</strong>
+  <%= @artist.died %>
+</p>
+
+<center>
+  <table>
+    <thead>
+      <tr>
+        <th>Works</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% Work.where(artist_id: @artist.id).each do |work| %>
+        <tr>
+          <td><%= link_to work.name, work %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

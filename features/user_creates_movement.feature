@@ -1,7 +1,7 @@
 Feature: User creates movement 
 
   Scenario: User creates movement
-    Given I am on the home page
+    Given I am on the movement page
     When I follow "New Movement"
     Then I am on the new movement form
     When I fill in "Name" with "Example Movement"

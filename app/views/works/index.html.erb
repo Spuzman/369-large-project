@@ -1,0 +1,42 @@
+<h1>Listing works</h1>
+
+<%= form_tag works_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Movement</th>
+      <th>Year completed</th>
+      <th>Materials</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @works.each do |work| %>
+      <tr>
+        <td><%= work.name %></td>
+        <td><%= Artist.where(id: work.artist_id).first.name %></td>
+        <td><%= Movement.where(id: Artist.where(id: work.artist_id).first.id).first.name %></td>
+        <td><%= work.year_completed %></td>
+        <td><%= work.materials %></td>
+        <td><%= link_to 'Show', work %></td>
+        <td><%= link_to 'Edit', edit_work_path(work) %></td>
+        <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work', new_work_path %>

@@ -10,5 +10,23 @@
   <%= @movement.description %>
 </p>
 
+<center>
+  <table>
+    <thead>
+      <tr>
+        <th>Artists</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% Artist.where(movement_id: @movement.id).each do |artist| %>
+        <tr>
+          <td><%= link_to artist.name, artist %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>
+
 <%= link_to 'Edit', edit_movement_path(@movement) %> |
 <%= link_to 'Back', movements_path %>
